@@ -8,4 +8,4 @@ setup(name='reuter_util',
       author_email='andreas.reuter@fu-berlin.de',
       license='MIT',
       packages=['reuter_util'],
-      zip_safe=False)
+      zip_safe=False, install_requires=['pandas'])
