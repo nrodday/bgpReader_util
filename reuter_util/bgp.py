@@ -10,6 +10,10 @@ def get_bgp_fields(line):
     """
     fields = {}
     line = line.split('|')
+    fields['time'] = int(line[2].rstrip())
+    fields['project'] = line[3].rstrip()
+    fields['collector'] = line[4].rstrip()
+
     fields['prefix'] = line[7].rstrip()
     fields['as_path'] = line[9].rstrip()
     fields['origin'] = line[10].rstrip()
