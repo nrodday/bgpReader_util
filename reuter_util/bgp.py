@@ -48,6 +48,8 @@ def is_valid_bgp_entry(bgp_fields):
         return False
     if bgp_fields['as_path'] == "":
         return False
+    if bgp_fields['prefix'] == "0.0.0.0/0":
+        return False
     return True
 
 
