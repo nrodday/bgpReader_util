@@ -2,6 +2,7 @@ import pandas
 import numpy
 from collections import Counter
 from ipaddress import ip_network
+from requests import get  # to make GET request
 import os
 
 
@@ -110,6 +111,12 @@ def init_dic_with(dic, key, default_value):
 
     return dic[key]
 
+
+def download_file(url, out, verify_cert=True):
+	with open(out, "wb") as file:
+		response = get(url, verify=verify_cert)
+		# write to file
+		file.write(response.content)
 
 def get_sum_of_values(counter):
     """
