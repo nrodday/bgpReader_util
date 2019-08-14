@@ -30,7 +30,8 @@ def get_bgp_fields(line, api_version='v1'):
             fields['origin'] = line[10].rstrip()
             #fields['vstate'] = int(line[14].rstrip())
 
-        except:
+        except Exception as e:
+            print(e)
             print('Exception occured in the following line: ')
             print(line)
             print('---')
@@ -46,7 +47,7 @@ def get_bgp_fields(line, api_version='v1'):
     elif api_version == 'v2':
         try:
             line = line.split('|')
-            fields['time'] = int(line[2].rstrip())
+            fields['time'] = float(line[2].rstrip())
             fields['project'] = line[3].rstrip()
             fields['collector'] = line[4].rstrip()
 
@@ -64,7 +65,8 @@ def get_bgp_fields(line, api_version='v1'):
 
             #fields['vstate'] = int(line[16].rstrip())
 
-        except:
+        except Exception as e:
+            print(e)
             print('Exception occured in the following line: ')
             print(line)
             print('---')
