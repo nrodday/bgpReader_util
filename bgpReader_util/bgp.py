@@ -62,6 +62,7 @@ def get_bgp_fields(line, api_version='v1'):
 
             fields['as_path'] = line[11].rstrip()
             fields['origin'] = line[12].rstrip()
+            fields['communities'] = line[13].rstrip()
 
             #fields['vstate'] = int(line[16].rstrip())
 
